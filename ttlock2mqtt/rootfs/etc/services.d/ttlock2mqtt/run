@@ -32,6 +32,8 @@ mqttbrokerpass=$(bashio::config 'password')
 
 # Print
 bashio::log.info "Run application..."
+bashio::log.info $(bashio::config 'ttlockclientid')
+bashio::log.info ${ttlockclientid}
 bashio::log.info $(bashio::config 'host')
 bashio::log.info ${mqttbrokerhost}
 bashio::log.info $(bashio::config 'port')
