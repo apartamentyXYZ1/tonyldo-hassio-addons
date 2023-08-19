@@ -26,12 +26,20 @@ maxthreads=$(bashio::config 'maxthreads')
 
 # Get the keys from the mqtt service.
 mqttbrokerhost=$(bashio::config 'host')
-mqttbrokerport=$(bashio::config "port")
-mqttbrokeruser=$(bashio::config "username")
-mqttbrokerpass=$(bashio::config "password")
+mqttbrokerport=$(bashio::config 'port')
+mqttbrokeruser=$(bashio::config 'username')
+mqttbrokerpass=$(bashio::config 'password')
 
 # Print
 bashio::log.info "Run application..."
+bashio::log.info $(bashio::config 'host')
+bashio::log.info ${mqttbrokerhost}
+bashio::log.info $(bashio::config 'port')
+bashio::log.info ${mqttbrokerport}
+bashio::log.info $(bashio::config 'username')
+bashio::log.info ${mqttbrokeruser}
+bashio::log.info $(bashio::config 'password')
+bashio::log.info ${mqttbrokerpass}
 
 # Run application
 exec python3 /usr/bin/ttlock_adapter.py --client=${ttlockclientid} --token=${ttlocktoken} --broker=${mqttbrokerhost} --port=${mqttbrokerport} --user=${mqttbrokeruser} --Pass=${mqttbrokerpass} --State_delay=${publishstatedelay} --Battery_delay=${publishbatterydelay} --log_level=${loglevel} --Max_threads=${maxthreads}
