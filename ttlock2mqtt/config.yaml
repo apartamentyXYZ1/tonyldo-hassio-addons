@@ -23,6 +23,10 @@ options:
   publishstatedelay: 60
   publishbatterydelay: 300
   loglevel: "INFO"
+  host: ""
+  port: ""
+  username: ""
+  password: ""
 schema:
   ttlockclientid: "str"
   ttlocktoken: "str"
@@ -30,3 +34,7 @@ schema:
   publishbatterydelay: "int?"
   loglevel: "list(DEBUG|INFO|WARNING|ERROR)?"
   maxthreads: "int?"
+  host: "str"
+  port: "str"
+  username: "str"
+  password: "str"
