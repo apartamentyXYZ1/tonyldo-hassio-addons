@@ -25,10 +25,10 @@ loglevel=$(bashio::config 'loglevel')
 maxthreads=$(bashio::config 'maxthreads')
 
 # Get the keys from the mqtt service.
-mqttbrokerhost=$(bashio::services mqtt "host")
-mqttbrokerport=1883
-mqttbrokeruser=$(bashio::services mqtt "username")
-mqttbrokerpass=$(bashio::services mqtt "password")
+mqttbrokerhost=$(bashio::config 'host')
+mqttbrokerport=$(bashio::config "port")
+mqttbrokeruser=$(bashio::config "username")
+mqttbrokerpass=$(bashio::config "password")
 
 # Print
 bashio::log.info "Run application..."
